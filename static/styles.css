@@ -1,4 +1,8 @@
 h1 {
-    background-color:red;
+    font-family: Verdana;
 } 
 
+#nav li {
+    display:inline-block;
+    margin:10px;
+}
