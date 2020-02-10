@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request   
+<<<<<<< HEAD
 import os, pymongo
 
 app = Flask(__name__)
@@ -20,6 +21,16 @@ def index():
     # return render_template("index.html", call_data=call_data)
     return render_template("index.html", call_data=call_data)
     
+=======
+import os
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+>>>>>>> 276f6af3a86ef3b30ca9d3b15555430d2c33ed47
 if __name__  == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
