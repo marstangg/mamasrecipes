@@ -88,6 +88,22 @@ def submit_search():
     
     return render_template("search.html", search_recipes=search_recipes)
 
+@app.route("/edit/<recipe_id>")
+def edit(recipe_id):
+    
+    conn = get_connection()
+    
+    search_recipes = conn[MONGO_DB]["recipes"].find_one({
+        "_id": ObjectId(recipe_id)
+    })
+    
+    return render_template("edit.html", recipe_id=recipe_id, search_recipes=search_recipes)
+    
+@app.route("/edit/<recipe_id>", methods=["POST"])
+def submit_edit(recipe_id):
+    
+    return redirect("/recipes")
+    
 if __name__  == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

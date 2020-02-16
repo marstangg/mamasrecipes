@@ -33,6 +33,7 @@
 <h3>Directions</h3>
 {{each.directions}}
 </br>
+<a href="{{url_for('edit', recipe_id=each["_id"])}}">Edit</a>
 {% endfor %}
 </div>
 </br>
