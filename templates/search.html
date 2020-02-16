@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Search Recipes</h1>
+<form method="POST">
+    <label>Search By</label>
+    <input type="text" name="search-term" placeholder="eg: username, tag"></input>
+    </br>
+    <label>Search</label>
+    <input type="text" name="search-word" placeholder="eg: john, chicken, western"></input>
+    <input type="submit"></input>
+</form>
+
+<div>
+{% for each in search_recipes %}
+
+<h2>Results</h2>
+</br>
+<h3>Username</h3>
+{{each.username}}
+<h3>Time taken</h3>
+{{each.time}}
+<h3>Recipe Name</h3>
+{{each.recipe_name}}
+<h3>Recipe Tag</h3>
+{{each.recipe_tag}}
+<h3>Ingredients</h3>
+{{each.ingredients}}
+<h3>Directions</h3>
+{{each.directions}}
+</br>
+{% endfor %}
+</div>
+</br>
+
+{% endblock %}

@@ -65,6 +65,20 @@ def submit_add_recipe():
 def search():
     
     return render_template("search.html")
+    
+@app.route("/search", methods=["POST"])
+def submit_search():
+    
+    conn = get_connection()
+    
+    search_term = request.form["search-term"]
+    search_word = request.form["search-word"]
+    
+    search_recipes = conn[MONGO_DB]["recipes"].find({
+        search_term:{"$regex":search_word, "$options":"i"}
+    })
+    
+    return render_template("search.html", search_recipes=search_recipes)
 
 if __name__  == '__main__':
     app.run(host=os.environ.get('IP'),
