@@ -50,7 +50,7 @@ def submit_add_recipe():
     else:
         tagged = "western"
     
-    add_recipe = conn[MONGO_DB]["recipes"].insert_one({
+    conn[MONGO_DB]["recipes"].insert_one({
         "username": username,
         "time": time,
         "recipe_name": recipe_name,
@@ -120,7 +120,7 @@ def submit_edit(recipe_id):
     else:
         tagged = "western"
     
-    add_recipe = conn[MONGO_DB]["recipes"].update({
+    conn[MONGO_DB]["recipes"].update({
         "_id":ObjectId(recipe_id)    
     },
     {"$set":
@@ -134,7 +134,30 @@ def submit_edit(recipe_id):
         }
     })
     
-    return redirect("/recipes")
+    return redirect(url_for("recipes"))
+    
+@app.route("/delete/<recipe_id>")
+def delete(recipe_id):
+    
+    conn = get_connection()
+    
+    search_recipes = conn[MONGO_DB]["recipes"].find({
+        "_id": ObjectId(recipe_id)
+    })
+    
+    return render_template("delete.html", search_recipes=search_recipes, recipe_id=recipe_id)
+    
+@app.route("/delete/<recipe_id>", methods=["POST"])
+def submit_delete(recipe_id):
+    
+    conn = get_connection()
+    
+    conn[MONGO_DB]["recipes"].delete_one({
+        "_id": ObjectId(recipe_id)
+    })
+    
+    return redirect(url_for("recipes"))
+
     
 if __name__  == '__main__':
     app.run(host=os.environ.get('IP'),
