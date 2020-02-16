@@ -1,11 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
 
-
 <h1>Recipes</h1>
-
-<div>
-{% for each in recipes %}
+{% for each in recipes%}
 
     <h3>Username</h3>
     {{each.username}}
@@ -19,8 +16,7 @@
     {{each.ingredients}}
     <h3>Directions</h3>
     {{each.directions}}
+    </br>
 
 {% endfor %}
-</div>
-
 {% endblock %}

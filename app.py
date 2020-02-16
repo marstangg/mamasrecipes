@@ -17,17 +17,49 @@ def index():
 
 @app.route("/recipes")
 def recipes():
+    
     conn = get_connection()
     
-    recipes = conn["MONGO_DB"]["recipes"].find({})
-    
+    recipes = conn[MONGO_DB]["recipes"].find({})
+
     return render_template("recipes.html", recipes=recipes)
 
 @app.route("/add-recipe")
 def add_recipe():
     
-    
     return render_template("add-recipe.html")
+
+@app.route("/add-recipe", methods=["POST"])
+def submit_add_recipe():
+    
+    conn=get_connection()
+    
+    username = request.form["username"]
+    time = request.form["est-time"]
+    recipe_name = request.form["recipe-name"]
+    recipe_tag = request.form["recipe-tag"]
+    ingredients = request.form["ingredients"]
+    directions = request.form["directions"]
+    
+    if recipe_tag == "chinese":
+        tagged = "chinese"
+    elif recipe_tag == "indian":
+        tagged = "indian"
+    elif recipe_tag == "malay":
+        tagged = "malay"
+    else:
+        tagged = "western"
+    
+    add_recipe = conn[MONGO_DB]["recipes"].insert_one({
+        "username": username,
+        "time": time,
+        "recipe_name": recipe_name,
+        "recipe_tag": tagged,
+        "ingredients": ingredients,
+        "directions": directions
+    })
+    
+    return redirect("/")
     
 @app.route("/search")
 def search():
