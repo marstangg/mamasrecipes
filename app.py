@@ -74,9 +74,17 @@ def submit_search():
     search_term = request.form["search-term"]
     search_word = request.form["search-word"]
     
+    if search_term == "username":
+        search_by="username"
+    elif search_term == "ingredients":
+        search_by="ingredients"
+    else:
+        search_by="recipe_tag"
+    
     search_recipes = conn[MONGO_DB]["recipes"].find({
-        search_term:{"$regex":search_word, "$options":"i"}
+        search_by:{"$regex":search_word, "$options":"i"}
     })
+    
     
     return render_template("search.html", search_recipes=search_recipes)
 

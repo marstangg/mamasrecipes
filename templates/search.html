@@ -4,7 +4,11 @@
 <h1>Search Recipes</h1>
 <form method="POST">
     <label>Search By</label>
-    <input type="text" name="search-term" placeholder="eg: username, tag"></input>
+    <select id="search-term" name="search-term">
+      <option value="username">Username</option>
+      <option value="ingredients">Ingredients</option>
+      <option value="recipe-tag">Recipe Tag</option>
+    </select>
     </br>
     <label>Search</label>
     <input type="text" name="search-word" placeholder="eg: john, chicken, western"></input>
