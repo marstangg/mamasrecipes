@@ -102,6 +102,38 @@ def edit(recipe_id):
 @app.route("/edit/<recipe_id>", methods=["POST"])
 def submit_edit(recipe_id):
     
+    conn=get_connection()
+    
+    username = request.form["username"]
+    time = request.form["est-time"]
+    recipe_name = request.form["recipe-name"]
+    recipe_tag = request.form["recipe-tag"]
+    ingredients = request.form["ingredients"]
+    directions = request.form["directions"]
+    
+    if recipe_tag == "chinese":
+        tagged = "chinese"
+    elif recipe_tag == "indian":
+        tagged = "indian"
+    elif recipe_tag == "malay":
+        tagged = "malay"
+    else:
+        tagged = "western"
+    
+    add_recipe = conn[MONGO_DB]["recipes"].update({
+        "_id":ObjectId(recipe_id)    
+    },
+    {"$set":
+        {
+        "username": username,
+        "time": time,
+        "recipe_name": recipe_name,
+        "recipe_tag": tagged,
+        "ingredients": ingredients,
+        "directions": directions
+        }
+    })
+    
     return redirect("/recipes")
     
 if __name__  == '__main__':
