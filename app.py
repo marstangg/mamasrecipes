@@ -17,8 +17,11 @@ def index():
 
 @app.route("/recipes")
 def recipes():
+    conn = get_connection()
     
-    return render_template("recipes.html")
+    recipes = conn["MONGO_DB"]["recipes"].find({})
+    
+    return render_template("recipes.html", recipes=recipes)
 
 if __name__  == '__main__':
     app.run(host=os.environ.get('IP'),

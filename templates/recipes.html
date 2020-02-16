@@ -4,5 +4,23 @@
 
 <h1>Recipes</h1>
 
+<div>
+{% for each in recipes %}
+
+    <h3>Username</h3>
+    {{each.username}}
+    <h3>Time taken</h3>
+    {{each.time}}
+    <h3>Recipe Name</h3>
+    {{each.recipe_name}}
+    <h3>Recipe Tag</h3>
+    {{each.recipe_tag}}
+    <h3>Ingredients</h3>
+    {{each.ingredients}}
+    <h3>Directions</h3>
+    {{each.directions}}
+
+{% endfor %}
+</div>
 
 {% endblock %}
