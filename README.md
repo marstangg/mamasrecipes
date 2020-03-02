@@ -1,6 +1,7 @@
-Everyones Recipe
+Your Project's Name
+One or two paragraphs providing an overview of your project.
 
-Everyones Recipe is a web based application for sharing food recipes. Users can add their own recipes (and then edit or delete them) or read other users' recipes.
+Essentially, this part is your sales pitch.
 
 UX
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
@@ -21,23 +22,12 @@ For some/all of your features, you may choose to reference the specific project 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 Features Left to Implement
-Initially, I attempted to set up a virtualenv as per suggestion of mentor however after discussing with a tutor via webchat, I discovered that a virtualenv is more difficult to set up on Gitpod so this was abandoned.
-A rating system - up to 5 stars.
+Another feature idea
 Technologies Used
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 JQuery
 The project uses JQuery to simplify DOM manipulation.
-[Materialize] (https://materializecss.com/)
-The project uses Materialize for styling and layout.
-[Bootstrap] (https://getbootstrap.com/)
-The project uses Bootstrap for styling and layout.
-Flask
-The project uses *Flask to...
-[MongoDB] https://www.mongodb.com/)
-The project uses MongoDB for creating, reading, updating and deleting data from a database.
-[Heroku] (https://Heroku.com/)
-The project uses Heroku for deploying and hosting the app.
 Testing
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
@@ -73,4 +63,3 @@ Media
 The photos used in this site were obtained from ...
 Acknowledgements
 I received inspiration for this project from X
-The page corner folds CSS was from http://nicolasgallagher.com/pure-css-folded-corner-effect/
