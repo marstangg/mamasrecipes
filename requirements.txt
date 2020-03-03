@@ -6,7 +6,7 @@ botocore==1.14.10
 CodeIntel==0.9.3
 colorama==0.4.1
 configparser==4.0.2
-cryptography==2.1.4
+cryptography==2.3
 Django==1.11.10
 docutils==0.15.2
 enum34==1.1.6
