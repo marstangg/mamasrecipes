@@ -32,4 +32,3 @@ Deployment
 Heroku
 The site was deployed to Heroku via new branch (production) which was based on the master branch. 
 A new app was created in the Heroku environment. Environment variables used for the database and the access keys for the Amazon S3 storage were replaced with corresponding config vars via the heroku dev center. 
-Gunicorn server was installed as a dependency and a Procfile was created with the settings required to run the app using gunicorn.
