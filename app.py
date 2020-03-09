@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for  
 import os, pymongo
 from bson.objectid import ObjectId
-import env
-
+# import env
 MONGO_URI= os.environ.get('MONGO_URI')
 MONGO_DB= os.environ.get('MONGO_DB')
 
