@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for  
 import os, pymongo
 from bson.objectid import ObjectId
-# import env
+
 MONGO_URI= os.environ.get('MONGO_URI')
 MONGO_DB= os.environ.get('MONGO_DB')
 
@@ -19,9 +19,8 @@ def index():
 def recipes():
     
     conn = get_connection()
+    recipes = conn[MONGO_DB]["recipes"].find()
     
-    recipes = conn[MONGO_DB]["recipes"].find({})
-
     return render_template("recipes.html", recipes=recipes)
 
 @app.route("/add-recipe")
