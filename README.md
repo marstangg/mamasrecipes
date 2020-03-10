@@ -1,4 +1,4 @@
-Mamas Recipe 
+Mamas Recipes 
 
 A simple blog recipe book that allows users to look for recipes and add recipes of their own.
 This makes this blog ultimately everyones friendly recipe book.
