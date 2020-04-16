@@ -36,16 +36,17 @@ Technologies Used
 Testing
 =========
 
-Besides that the website was constantly tested during the development process. Browser developer tools were used to test HTML, CSS, JavaScript and responses from the server. For testing JavaScript console.log() function was used to log and test information and for testing Python the function print was used to test statements as also Python Console to test algorithms. The command "python manage.py shell" was often used in the terminal to test Django functions and database. The website also was tested from the user perspective and from the admin perspective. 
+Manual Testing on the following browsers. Firefox, Chrome, Edge and IE11. Scenarios
 
-The website was tested in all browsers and functionality changed accordingly to make sure that the website works well in all browsers (e.g. initially Bootstrap carousel was used for sliders but it did not work correctly on Internet Explorer, and after not being able to find a solution, the Slick slider was used instead which worked perfectly in all browsers). 
+adding a new recipe
+searching for recipe based on ingrediants
+searching for recipe based on username
+searching for recipe based on tag
+Edit a recipe
+Delete a recipe
 
- HTML code was validated using The W3C Markup Validation Service. Validation service noted that alt tag was missing for one image, role attribute was missing for one dropdown menu, type attribute was not required for script tag and all scripts were placed outside body element. All issues were addressed and code amended accordingly. 
-
-JavaScript code was validated with JSLint, Esprima, JSHint online validators. 
-
-The website was tested on different screen sizes using Google Device Toolbar in Google Chrome Developer Tools as also using Mobile/RWD Tester extension in Google Chrome. The website was tested on Windows desktop computer and on various phones, S10 and iPhone 8 The website was also tested in Safari browser on iPad Pro 10.2 and on my MacBook Air.
-
+validated my HTML and CSS using the following:
+HTML Validation
 
 CONTRIBUTIONS
 ===============
