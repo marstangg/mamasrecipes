@@ -8,6 +8,7 @@ body {
   font-size: 20px;
   color: #212529;
   font-family: 'Lora', 'Times New Roman', serif;
+ 
 }
 
 p {
@@ -19,19 +20,20 @@ p a {
   text-decoration: underline;
 }
 
-h1,
+h1 { font-size:30px;}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 800;
+  font-size:20px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 
 a {
-  color: #212529;
+  color: blue;
   transition: all 0.2s;
 }
 
