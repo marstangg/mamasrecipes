@@ -2,26 +2,27 @@
 {% extends "index.html" %}
 {% block content %}
 
-<h1>Recipes</h1>
+<h1 style="font-weight: bold; text-align: center;">Recipes</h1>
 {% for each in recipes%}
-
-    <h3>Username</h3>
+   <div class="flex-container">
+       <div>
+    <h3 style="color:green;">Username</h3>
     {{each.username}}
-    <h3>Time taken</h3>
+    <h3 style="color:green;">Time taken</h3>
     {{each.time}}
-    <h3>Recipe Name</h3>
+    <h3 style="color:green;">Recipe Name</h3>
     {{each.recipe_name}}
-    <h3>Recipe Tag</h3>
+    <h3 style="color:green;">Recipe Tag</h3>
     {{each.recipe_tag}}
-    <h3>Ingredients</h3>
+    <h3 style="color:green;">Ingredients</h3>
     {{each.ingredients}}
-    <h3>Directions</h3>
+    <h3 style="color:green;">Directions</h3>
     {{each.directions}}
     </br>
     <a href="{{url_for('edit', recipe_id=each['_id'])}}">Edit</a>
     <a href="{{url_for('delete', recipe_id=each['_id'])}}">Delete</a>
-   
-    </br>
-
+    </div>
+    </div>
+ </br>
 {% endfor %}
 {% endblock %}
