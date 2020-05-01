@@ -10,29 +10,26 @@ app = Flask(__name__)
 def get_connection():
     conn=pymongo.MongoClient(MONGO_URI)
     return conn
-    
+
+""" Display Landing Page """    
 @app.route("/")
 def index():
     return render_template("index.html")
 
+""" Show all record in database """
 @app.route("/recipes")
 def recipes():
-    
     conn = get_connection()
     recipes = conn[MONGO_DB]["recipes"].find()
-    
     return render_template("recipes.html", recipes=recipes)
 
+""" Add a new recipe """
 @app.route("/add-recipe")
 def add_recipe():
-    
     return render_template("add-recipe.html")
-
 @app.route("/add-recipe", methods=["POST"])
 def submit_add_recipe():
-    
     conn=get_connection()
-    
     username = request.form["username"]
     time = request.form["est-time"]
     recipe_name = request.form["recipe-name"]
