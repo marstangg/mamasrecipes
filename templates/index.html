@@ -8,6 +8,15 @@
       <h1 class='navbar-brand'>MAMA's RECIPE</h1>
       <p>Every mama have work very hard to make sure we have food on the table. This portal is to appreciate them by sharing their excellent recipe and make sure everyone get to savour the taste of home-cook food !</p>
       <a class="btn btn-success" href="{{url_for('recipe_add')}}">Start Sharing Recipe</a>
+      <div class='form-group mt-4'>
+        <select class='custom-select w-50 bg-light' name="search-tag">
+          <option class=''bg-danger value="">Choose to view your desired type of cusine</option>
+          <option value="all"><a href="{{url_for('recipes')}}"></a>All recipes</option>
+          <option value="chinese">Chinese</option>
+          <option value="indian">Indian</option>
+          <option value="malay">Malay</option>
+          <option value="western">Western</option>
+        </select>      </div>
     </div>
 
     </div>

@@ -12,7 +12,7 @@
             <th class='text-success'>Recipe Name</th>
             <td> {{each.recipe_name}} <span class='text-muted'><small> ( {{each.recipe_tag}} )</small></span></td>
             <td class='px-5'> &nbsp </td>
-            <td colspan='2' class='text-muted text-right'><small>uploaded by {{each.username}}</small> |
+            <td colspan='2' class='text-danger text-right'><small>uploaded by {{each.username}}</small> |
             <a href="{{ url_for('recipe_edit', recipe_id=each['_id'])}}">Edit</a> |
             <a href="{{ url_for('recipe_delete', recipe_id=each['_id'])}}">Delete</a></td>
         </tr>
