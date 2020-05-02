@@ -54,7 +54,59 @@ def save_recipe():
     })
     return redirect(url_for('index'))
 
+@app.route('/recipe_edit/<recipe_id>')
+def recipe_edit (recipe_id):
+    selected_recipe = recipe_data.find_one({
+        "_id": ObjectId(recipe_id)
+    })
+    return render_template ('recipe_edit.html', recipe=selected_recipe)
     
+@app.route("/recipe_edit/<recipe_id>", methods=['POST'])
+def recipe_update(recipe_id):
+
+    username = request.form["username"]
+    time = request.form["est-time"]
+    recipe_name = request.form["recipe-name"]
+    recipe_tag = request.form["recipe-tag"]
+    ingredients = request.form["ingredients"]
+    directions = request.form["directions"]
+    
+    recipe_data.update({
+        "_id":ObjectId(recipe_id)    
+    },
+    {"$set":
+        {
+        "username": username,
+        "time": time,
+        "recipe_name": recipe_name,
+        "recipe_tag": recipe_tag,
+        "ingredients": ingredients,
+        "directions": directions
+        }
+    })
+    
+    return redirect(url_for("recipes"))
+    
+# Delete Route 
+@app.route("/recipe_delete/<recipe_id>")
+def recipe_delete(recipe_id):
+    recipe = recipe_data.find({
+        "_id": ObjectId(recipe_id)
+    })
+    return render_template("recipe_delete.html", recipe=recipe)
+    
+    
+# @app.route("/delete/<recipe_id>", methods=["POST"])
+# def submit_delete(recipe_id):
+    
+#     conn = get_connection()
+    
+#     conn[MONGO_DB]["recipes"].delete_one({
+#         "_id": ObjectId(recipe_id)
+#     })
+    
+#     return redirect(url_for("recipes"))
+
 # @app.route("/search")
 # def search():
     
@@ -83,70 +135,7 @@ def save_recipe():
 #     return render_template("search.html", search_recipes=search_recipes)
 
 
-# """ Edit Route """
-
-
-@app.route('/recipe_edit/<recipe_id>')
-def recipe_edit (recipe_id):
-    selected_recipe = recipe_data.find_one({
-        "_id": ObjectId(recipe_id)
-    })
-    return render_template ('recipe_edit.html', recipe=selected_recipe)
-    
-@app.route("/recipe_edit/<recipe_id>", methods=['POST'])
-def recipe_update(recipe_id):
-
-    username = request.form["username"]
-    time = request.form["est-time"]
-    recipe_name = request.form["recipe-name"]
-    recipe_tag = request.form["recipe-tag"]
-    ingredients = request.form["ingredients"]
-    directions = request.form["directions"]
-    
-
-    
-    recipe_data.update({
-        "_id":ObjectId(recipe_id)    
-    },
-    {"$set":
-        {
-        "username": username,
-        "time": time,
-        "recipe_name": recipe_name,
-        "recipe_tag": recipe_tag,
-        "ingredients": ingredients,
-        "directions": directions
-        }
-    })
-    
-    return redirect(url_for("recipes"))
-    
-# # """ Delete Route """    
-
-# @app.route("/delete/<recipe_id>")
-# def delete(recipe_id):
-    
-#     conn = get_connection()
-    
-#     search_recipes = conn[MONGO_DB]["recipes"].find({
-#         "_id": ObjectId(recipe_id)
-#     })
-    
-#     return render_template("delete.html", search_recipes=search_recipes, recipe_id=recipe_id)
-    
-    
-# @app.route("/delete/<recipe_id>", methods=["POST"])
-# def submit_delete(recipe_id):
-    
-#     conn = get_connection()
-    
-#     conn[MONGO_DB]["recipes"].delete_one({
-#         "_id": ObjectId(recipe_id)
-#     })
-    
-#     return redirect(url_for("recipes"))
-
-    
+# """ Edit Route """    
     
     
     

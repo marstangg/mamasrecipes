@@ -14,7 +14,7 @@
             <td class='px-5'> &nbsp </td>
             <td colspan='2' class='text-muted text-right'><small>uploaded by {{each.username}}</small> |
             <a href="{{ url_for('recipe_edit', recipe_id=each['_id'])}}">Edit</a> |
-            <a href="">Delete</a></td>
+            <a href="{{ url_for('recipe_delete', recipe_id=each['_id'])}}">Delete</a></td>
         </tr>
         <tr>
             <th class='text-success'>Time required :</th>
