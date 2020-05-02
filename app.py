@@ -95,17 +95,13 @@ def recipe_delete(recipe_id):
     })
     return render_template("recipe_delete.html", recipe=recipe)
     
+@app.route("/recipe_delete/<recipe_id>", methods=["POST"])
+def proceed_delete(recipe_id):
     
-# @app.route("/delete/<recipe_id>", methods=["POST"])
-# def submit_delete(recipe_id):
-    
-#     conn = get_connection()
-    
-#     conn[MONGO_DB]["recipes"].delete_one({
-#         "_id": ObjectId(recipe_id)
-#     })
-    
-#     return redirect(url_for("recipes"))
+    recipe_data.delete_one({
+        "_id": ObjectId(recipe_id)
+    })
+    return redirect(url_for("recipes"))
 
 # @app.route("/search")
 # def search():
