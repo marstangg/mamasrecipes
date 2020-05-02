@@ -103,10 +103,18 @@ def proceed_delete(recipe_id):
     })
     return redirect(url_for("recipes"))
 
-# @app.route("/search")
-# def search():
-    
-#     return render_template("search.html")
+@app.route("/recipe_search/<search_tag>")
+def recipe_search(search_tag):
+    # search_recipes = recipe_data.find({
+    #   "recipe_tag", search_tag
+    # })
+    if (search_tag == 'all'):
+        search_recipes = recipe_data.find({})
+    else :
+        search_recipes = recipe_data.find({
+            "recipe_tag" : search_tag,
+        })
+    return render_template("recipe_search.html", recipe = search_recipes)
     
 # @app.route("/search", methods=["POST"])
 # def submit_search():
@@ -130,9 +138,9 @@ def proceed_delete(recipe_id):
     
 #     return render_template("search.html", search_recipes=search_recipes)
 
+ 
 
-# """ Edit Route """    
-    
+
     
     
 if __name__  == '__main__':
