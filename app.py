@@ -86,20 +86,23 @@ def save_recipe():
 # """ Edit Route """
 
 
-@app.route('/recipe_edit')
-def recipe_edit ():
-    return render_template ('recipe_edit.html')
-# @app.route("/edit_recipe/<recipe_id>")
-# def edit_recipe(recipe_id):
+@app.route('/recipe_edit/<recipe_id>')
+def recipe_edit (recipe_id):
+    selected_recipe = recipe_data.find_one({
+        "_id": ObjectId(recipe_id)
+    })
+    return render_template ('recipe_edit.html', recipe=selected_recipe)
+    
+@app.route("/recipe_edit/<recipe_id>", methods=['POST'])
+def recipe_update(recipe_id):
     
 #     conn = get_connection()
     
-#     search_recipes = conn[MONGO_DB]["recipes"].find_one({
-#         "_id": ObjectId(recipe_id)
+#     
 #     })
     
 #     # return render_template("edit.html", recipe_id=recipe_id, search_recipes=search_recipes)
-#     return render_template ("recipe_edit.html")
+    # return render_template ("recipe_edit.html")
 # # @app.route("/edit_recipe/<recipe_id>", methods=["POST"])
 # # def submit_edit(recipe_id):
     
@@ -135,7 +138,7 @@ def recipe_edit ():
 # #         }
 # #     })
     
-# #     return redirect(url_for("recipes"))
+    return redirect(url_for("recipes"))
     
 # # """ Delete Route """    
 
