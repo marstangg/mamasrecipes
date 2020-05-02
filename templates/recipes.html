@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% block navbg %} bg-light {% endblock %}
 {% block content %}
-<div class="bg-dark p-5 my-5"></div>
+<!--<div class="bg-dark p-5 my-5"></div>-->
 
 <section class='container-fluid p-5'>
     {% for each in recipes %} 
@@ -8,11 +9,11 @@
         <table>
       <tbody>
         <tr>
-            <th class='text-success'>Recipe Name {{each._id}}</th>
+            <th class='text-success'>Recipe Name</th>
             <td> {{each.recipe_name}} <span class='text-muted'><small> ( {{each.recipe_tag}} )</small></span></td>
             <td class='px-5'> &nbsp </td>
             <td colspan='2' class='text-muted text-right'><small>uploaded by {{each.username}}</small> |
-            <a href="{{ url_for('edit_recipe', recipe_id=each['_id']) }}">Edit</a> |
+            <a href="{{ url_for('recipe_edit')}}">Edit</a> |
             <a href="">Delete</a></td>
         </tr>
         <tr>

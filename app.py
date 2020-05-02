@@ -86,9 +86,9 @@ def save_recipe():
 # """ Edit Route """
 
 
-# @app.route('/edit_recipe/<recipe_id>')
-# def edit_recipe (recipe_id):
-#     return render_template ('edit_recipe.html')
+@app.route('/recipe_edit')
+def recipe_edit ():
+    return render_template ('recipe_edit.html')
 # @app.route("/edit_recipe/<recipe_id>")
 # def edit_recipe(recipe_id):
     
