@@ -1,35 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %} 
-<!--<main class='container-fluid'>-->
+<main class='container-fluid p-0'>
   <!--Page Header -->
-<!--  <header class="masthead" style="background-image: url('static/img/mamasrecipe.jpg')">-->
-<!--    <div class="overlay"></div>-->
-<!--    <div class="container">-->
-<!--      <div class="row">-->
-<!--        <div class="col-lg-8 col-md-10 mx-auto">-->
-<!--          <div class="site-heading">-->
-<!--            <h1>Mamas Recipes</h1>-->
-<!--            <span class="subheading">For Everyone</span>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </header>-->
-  <!--Listing-->
-<!--  <div class="row">-->
-<!--    <div class="col-3 menu-box">-->
-<!--      <img src="static/img/western.jpg" alt="western">-->
-<!--    </div>-->
-<!--    <div class="col-3 menu-box">-->
-<!--      <img src="static/img/gyoza.jpg" alt="asian">-->
-<!--    </div>-->
-<!--    <div class="col-3 menu-box">-->
-<!--      <img src="static/img/dessert.jpg" alt="dessert">  -->
-<!--    </div>-->
-<!--    <div class="col-3 menu-box">-->
-<!--      <img src="static/img/vege.jpg" alt="veg">  -->
-<!--    </div>-->
-<!--  </div>-->
-<!--</main>  -->
+  <header class="masthead d-flex justify-content-center align-items-center">
+    <div class='w-50 p-4 text-center'>
+      <h1 class='navbar-brand'>MAMA's RECIPE</h1>
+      <p>Every mama have work very hard to make sure we have food on the table. This portal is to appreciate them by sharing their excellent recipe and make sure everyone get to savour the taste of home-cook food !</p>
+      <div class="btn btn-success">Start Sharing Recipe</div>
+    </div>
+    <!--<div class="overlay"></div>-->
+    <!--<div class="container">-->
+    <!--  <div class="row">-->
+    <!--    <div class="col-lg-8 col-md-10 mx-auto">-->
+    <!--      <div class="site-heading">-->
+    <!--        <h1>Mamas Recipes</h1>-->
+    <!--        <span class="subheading">For Everyone</span>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    </div>
+  </header>
+  <!--MENU -->
+  <div class="row">
+    <div class="col-3 menu-box">
+      <img src="static/img/western.jpg" alt="western">
+    </div>
+    <div class="col-3 menu-box">
+      <img src="static/img/gyoza.jpg" alt="asian">
+    </div>
+    <div class="col-3 menu-box">
+      <img src="static/img/dessert.jpg" alt="dessert">  
+    </div>
+    <div class="col-3 menu-box">
+      <img src="static/img/vege.jpg" alt="veg">  
+    </div>
+  </div>
+</main>  
 {% endblock %}

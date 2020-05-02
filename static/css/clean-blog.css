@@ -116,13 +116,7 @@ img::-moz-selection {
   text-transform: uppercase;
 }
 
-.menu-box {
-  height : 300px;
-}
-.menu-box img {
-  width: 100%;
-  height: 100%;
-}
+
 
 @media only screen and (min-width: 992px) {
   #mainNav {
