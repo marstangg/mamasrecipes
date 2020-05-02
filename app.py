@@ -95,48 +95,29 @@ def recipe_edit (recipe_id):
     
 @app.route("/recipe_edit/<recipe_id>", methods=['POST'])
 def recipe_update(recipe_id):
+
+    username = request.form["username"]
+    time = request.form["est-time"]
+    recipe_name = request.form["recipe-name"]
+    recipe_tag = request.form["recipe-tag"]
+    ingredients = request.form["ingredients"]
+    directions = request.form["directions"]
     
-#     conn = get_connection()
+
     
-#     
-#     })
-    
-#     # return render_template("edit.html", recipe_id=recipe_id, search_recipes=search_recipes)
-    # return render_template ("recipe_edit.html")
-# # @app.route("/edit_recipe/<recipe_id>", methods=["POST"])
-# # def submit_edit(recipe_id):
-    
-# #     conn=get_connection()
-    
-# #     username = request.form["username"]
-# #     time = request.form["est-time"]
-# #     recipe_name = request.form["recipe-name"]
-# #     recipe_tag = request.form["recipe-tag"]
-# #     ingredients = request.form["ingredients"]
-# #     directions = request.form["directions"]
-    
-# #     if recipe_tag == "chinese":
-# #         tagged = "chinese"
-# #     elif recipe_tag == "indian":
-# #         tagged = "indian"
-# #     elif recipe_tag == "malay":
-# #         tagged = "malay"
-# #     else:
-# #         tagged = "western"
-    
-# #     conn[MONGO_DB]["recipes"].update({
-# #         "_id":ObjectId(recipe_id)    
-# #     },
-# #     {"$set":
-# #         {
-# #         "username": username,
-# #         "time": time,
-# #         "recipe_name": recipe_name,
-# #         "recipe_tag": tagged,
-# #         "ingredients": ingredients,
-# #         "directions": directions
-# #         }
-# #     })
+    recipe_data.update({
+        "_id":ObjectId(recipe_id)    
+    },
+    {"$set":
+        {
+        "username": username,
+        "time": time,
+        "recipe_name": recipe_name,
+        "recipe_tag": recipe_tag,
+        "ingredients": ingredients,
+        "directions": directions
+        }
+    })
     
     return redirect(url_for("recipes"))
     
