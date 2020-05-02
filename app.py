@@ -111,7 +111,7 @@ def recipe_search(search_tag):
         search_recipes = recipe_data.find({
             "recipe_tag" : search_tag,
         })
-    return render_template("recipe_search.html", recipe = search_recipes)
+    return render_template("recipes.html", recipes = search_recipes)
     
 if __name__  == '__main__':
     app.run(host=os.environ.get('IP'),
