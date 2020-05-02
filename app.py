@@ -29,13 +29,10 @@ def recipes():
     recipes = recipe_data.find()
     return render_template("recipes.html", recipes=recipes)
 
-@app.route('/edit_recipe/<recipe_id>')
-def edit_recipe (recipe_id):
-    return render_template ('edit_recipe.html')
 # """ Add a new recipe """
-# @app.route("/add-recipe")
-# def add_recipe():
-#     return render_template("add-recipe.html")
+@app.route("/recipe_add")
+def recipe_add():
+    return render_template("recipe_add.html")
 # @app.route("/add-recipe", methods=["POST"])
 # def submit_add_recipe():
 #     conn=get_connection()
@@ -65,6 +62,7 @@ def edit_recipe (recipe_id):
 #     })
     
 #     return redirect("/")
+
     
 # @app.route("/search")
 # def search():
@@ -96,6 +94,10 @@ def edit_recipe (recipe_id):
 
 # """ Edit Route """
 
+
+# @app.route('/edit_recipe/<recipe_id>')
+# def edit_recipe (recipe_id):
+#     return render_template ('edit_recipe.html')
 # @app.route("/edit_recipe/<recipe_id>")
 # def edit_recipe(recipe_id):
     
