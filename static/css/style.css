@@ -50,7 +50,9 @@ main {
   width: auto;
   height: 100%;
 }
-
+.recipe-name {
+  font-size: 1.2rem
+}
 
 section{
   min-height: 100vh;

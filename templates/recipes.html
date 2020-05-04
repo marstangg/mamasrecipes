@@ -4,39 +4,41 @@
 {% block navadd %} text-light{% endblock %}{% block content %}
 
 <section class='container-fluid p-5'>
-    {% for each in recipes %} 
-    <div class="card p-5 m-5">
-        <table>
-      <tbody>
-        <tr>
-            <th class='text-success'>Recipe Name</th>
-            <td> {{each.recipe_name}} <span class='text-muted'><small> ( {{each.recipe_tag}} )</small></span></td>
-            <td class='px-5'> &nbsp </td>
-            <td colspan='2' class='text-danger text-right'><small>uploaded by {{each.username}}</small> |
-            <a href="{{ url_for('recipe_edit', recipe_id=each['_id'])}}">Edit</a> |
-            <a href="{{ url_for('recipe_delete', recipe_id=each['_id'])}}">Delete</a></td>
-        </tr>
-        <tr>
-            <th class='text-success'>Time required :</th>
-            <td> {{each.time}}</td>
-            <td colspan='3'>&nbsp</td>
-        </tr>
-        <tr>
-            <td colspan='2'> 
-                <span class='text-success font-weight-bold'><u>Ingredients</u></span><br/>
-                {{each.ingredients}} 
-            </td>
-            <td>&nbsp</td>
-            <td colspan='2'> 
-                <span class='text-success font-weight-bold'><u>Directions</u></span><br/>
-                {{each.directions}}
-            </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="mt-5">
+        {% for each in recipes %} 
+        <div class="card p-4 my-3">
+            <!--Recipe name (type of cusine) and uploaded by username-->
+            <div class='d-flex justify-content-between pb-4'> 
+                <div>
+                <span class='recipe-name font-weight-bold'> {{each.recipe_name}}  </span>
+                <span class='text-muted font-italic'><small>( {{each.recipe_tag}} )</small></span> 
+                </div>
+                <span class='text-right text-danger'><small>uploaded by <b>{{each.username}}</b></small></span>
+            </div>
+            <!--Ingredients required-->
+            <div>
+                <span class='text-success font-weight-bold'><u>Ingredients</u></span>
+                <p>{{each.ingredients}}</p>
+            </div>
+            <!--Cooking Instructions-->
+            <div>
+                <span class='text-success font-weight-bold'><u>Directions</u></span>
+                <p>{{each.directions}}</p>
+            </div>
+            <!--Time required and edit/delete links-->
+            <div class='d-flex justify-content-between'>
+                <div>
+                    <span class='font-weight-bold text-success'>Time required :</span> {{each.time}}
+                </div>
+                <div >
+                    <a class='text-muted font-italic' href="{{ url_for('recipe_edit', recipe_id=each['_id'])}}">Edit</a> |
+                    <a class='text-muted font-italic' href="{{ url_for('recipe_delete', recipe_id=each['_id'])}}">Delete</a></td>
+                </div>
+                
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-
 </section>
 
 
