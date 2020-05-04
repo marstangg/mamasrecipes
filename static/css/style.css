@@ -1,15 +1,29 @@
+main {
+  min-height: 100vh;
+  height :auto;
+  background-image: url('/static/img/ingredients.jpg');
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #mainNav {
   position: absolute;
   /*border-bottom: 1px solid #e9ecef;*/
   background-color: white;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-.navbar-brand {
-  font-size: 3.5rem;
+.navbar-main-brand {
+  font-size: 3rem;
   font-weight: 800;
   color: #343a40;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
+}
+.navbar-brand {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #343a40;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #mainNav .navbar-toggler {
@@ -28,12 +42,6 @@
   text-transform: uppercase;
 }
 
-.masthead {
-  height: 60vh;
-  width: 100%;
-  
-}
-
 /*Menu type*/
 .menu-box {
   height : 300px;
@@ -42,6 +50,7 @@
   width: auto;
   height: 100%;
 }
+
 
 section{
   min-height: 100vh;
@@ -53,4 +62,34 @@ section{
 
 label {
   font-weight: bold;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  height :50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
 }

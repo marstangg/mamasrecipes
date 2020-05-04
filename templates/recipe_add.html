@@ -1,8 +1,12 @@
 {% extends "base.html" %} 
-{% block navbg %} bg-light {% endblock %}
+{% block navbrand %} <a class="navbar-brand mt-4" href="{{url_for('index')}}">MAMA'S RECIPES</a> {% endblock %}
+{% block navhome %} text-light {% endblock %}
+{% block navrecipes %} text-light {% endblock %}
+{% block navadd %} text-dark{% endblock %}
 {% block content %}
 
-<section class='container-fluid d-flex justify-content-center align-items-center p-5'>
+<section class='container-fluid d-flex justify-content-center align-items-center flex-column p-5'>
+  <div class="p-3 bg-transparent">&nbsp</div>
   <div class='p-5 w-75 bg-light rounded'>
     <h2>Please share your recipe here</h2>
     <form method="POST">

@@ -3,42 +3,26 @@
 {% block content %} 
 <main class='container-fluid p-0'>
   <!--Page Header -->
-  <header class="masthead d-flex justify-content-center align-items-center">
-    <div class='w-50 p-4 text-center'>
-      <h1 class='navbar-brand'>MAMA's RECIPE</h1>
+  <div class="d-md-none d-block p-4"></div>
+  <header class="jumbotron d-flex justify-content-center align-items-center">
+    <div class='w-75 p-3 text-center'>
+      <h1 class='navbar-main-brand w-100 mt-4'>MAMA's RECIPE</h1>
       <p>Every mama have work very hard to make sure we have food on the table. This portal is to appreciate them by sharing their excellent recipe and make sure everyone get to savour the taste of home-cook food !</p>
       <a class="btn btn-success" href="{{url_for('recipe_add')}}">Start Sharing Recipe</a>
-      
+    
       <form>
-      <div class='form-group mt-4'>
-        <select class='custom-select w-50 bg-light' onchange ="if (this.value)window.location.href=this.value">
-          <option class=''bg-danger value="">Choose to view your desired type of cusine</option>
-          <option value="/recipe_search/all">All recipes</option>
-          <option value="/recipe_search/chinese">Chinese</option>
-          <option value="/recipe_search/indian">Indian</option>
-          <option value="/recipe_search/malay">Malay</option>
-          <option value="/recipe_search/western">Western</option>
-        </select>      
-      </div>
+        <div class='form-group mt-4'>
+          <select class='custom-select w-50 bg-light' onchange="if (this.value)window.location.href=this.value">
+                <option class=''bg-danger value=""> Your Preferred Cusine</option>
+                <option value="/recipe_search/all">All recipes</option>
+                <option value="/recipe_search/chinese">Chinese</option>
+                <option value="/recipe_search/indian">Indian</option>
+                <option value="/recipe_search/malay">Malay</option>
+                <option value="/recipe_search/western">Western</option>
+              </select>
+        </div>
       </form>
     </div>
-
-    </div>
   </header>
-  <!--MENU -->
-  <div class="row">
-    <div class="col-3 menu-box">
-      <img src="static/img/western.jpg" alt="western">
-    </div>
-    <div class="col-3 menu-box">
-      <img src="static/img/gyoza.jpg" alt="asian">
-    </div>
-    <div class="col-3 menu-box">
-      <img src="static/img/dessert.jpg" alt="dessert">  
-    </div>
-    <div class="col-3 menu-box">
-      <img src="static/img/vege.jpg" alt="veg">  
-    </div>
-  </div>
 </main>  
 {% endblock %}

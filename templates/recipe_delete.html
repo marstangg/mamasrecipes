@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block navbg %} bg-light {% endblock %}
+{% block navhome %} text-secondary {% endblock %}
+{% block navrecipes %} text-dark {% endblock %}
+{% block navadd %} text-secondary{% endblock %}
 {% block content %}
 
-<section class='container-fluid d-flex justify-content-center align-items-center p-5'>
+<section class='container-fluid d-flex justify-content-center align-items-center flex-column p-5'>
   <div class='p-5 w-75 bg-light rounded text-center'>
     <h2>Oh no! Is the recipe not cooking well ?</h2>
     <form method="POST">
         <p><i>You are about to remove the {{recipe.recipe_name}} recipe from our cookbook.</i></p>
         <a class='btn btn-success' href='{{url_for('recipes')}}'>No it is cooking well</a>
-        <button type='submit' class='btn btn-danger' href=''>Remove it, I will submit better ones</button>
+        <button type='submit' class='btn btn-danger' href=''>Remove it, I will submit better ones</>
     </form>
   </div>
 </section>
